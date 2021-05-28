@@ -1,0 +1,16 @@
+<html><head></head><body><h1 class="post-title">Modal G-Codes – Learn G Code Programming</h1>
+<div class="entry entry-content">
+    <h2><span id="Modal_G-Codes">Modal G-Codes</span></h2>
+    <p>A modal G-code is a G-code that remains effective in cnc program until another G-code in the same group is encountered (programmed).</p>
+    <p>Every G code has a Group associated with it, only one G code of associated Group can be active at a time in cnc program.</p>
+    <p>As<br>G00, G01, G02, G03&nbsp;&nbsp; Are from Same group<br>G43, G49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same group<br>G54~G59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same group<br>G98~G99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same group</p>
+    <div id="attachment_6716" class="wp-caption alignnone"><img class="size-full wp-image-6716" style="display: block; margin-left: auto; margin-right: auto;" src="img/8.jpg" alt="Learn G Code Programming" width="256" height="288">
+        <p class="wp-caption-text" style="text-align: center;">Learn G Code Programming</p>
+    </div>
+    <h2><span id="Modal_G-Codes_Example">Modal G-Codes Example</span></h2>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_n">N10</span> <span class="sh_g">G0</span> <span class="sh_x">X30</span> <span class="sh_y">Y5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_comment">(G0 is effective in this block)</span>
+<span class="sh_n">N20</span> <span class="sh_x">X50</span> <span class="sh_y">Y10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_comment">(No G-code specified, G0 remains effective)</span>
+<span class="sh_n">N30</span> <span class="sh_g">G1</span> <span class="sh_x">X30</span> <span class="sh_f">F200</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_comment">(G1 is effective from this block, NOT G0)</span></pre>
+    <p>As G0, G1, G2, G3 are from same group so in above cnc program example in<br>N10 G0 is active,<br>although in N20 no other G-code of that group is given so G0 remains active<br>but in N30 G1 is programmed so this cancels G0</p>
+</div>
+</body></html>

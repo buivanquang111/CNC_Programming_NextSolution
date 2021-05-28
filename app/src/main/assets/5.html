@@ -1,0 +1,17 @@
+<html><head></head><body><h1 class="post-title">One Shot G-Codes – Learn G Code Programming</h1>
+<div class="entry entry-content">
+    <h2><span id="One_Shot_G-Codes">One Shot G-Codes</span></h2>
+    <p>A One shot G-code is effective only in the cnc program block where it is programmed.<br>Once program starts executing the next block, it’s no longer effective.</p>
+    <div id="attachment_6706" class="wp-caption alignnone"><img class="size-full wp-image-6706" style="display: block; margin-left: auto; margin-right: auto;" src="img/9.jpg" alt="Learn G Code Programming" width="350" height="233">
+        <p class="wp-caption-text" style="text-align: center;">Learn G Code Programming</p>
+    </div>
+    <h2><span id="One_Shot_G-Codes_Example">One Shot G-Codes Example</span></h2>
+    <p>G4 Dwell is a One-shot G-Code, So following cnc programming example shows the use of G4 One Shot G code.</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_n">N10</span> <span class="sh_g">G0</span> <span class="sh_x">X30</span> <span class="sh_y">Y40</span>
+<span class="sh_n">N20</span> <span class="sh_g">G4</span> <span class="sh_x">X2</span>
+<span class="sh_n">N30</span> <span class="sh_x">X20</span> <span class="sh_y">Y50</span></pre>
+    <p>N20 G04 is one-shot G-code, effective only in this block.<br>N30 G04 no longer effective in this block. G0 is.</p>
+    <h3><span id="G04_Dwell_Code">G04 Dwell Code</span></h3>
+    <p>G4 dwell Fanuc<br>G4 dwell Haas<br>G4 dwell Sinumerik</p>
+</div>
+</body></html>

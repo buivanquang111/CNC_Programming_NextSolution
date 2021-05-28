@@ -1,0 +1,24 @@
+<html><head></head><body><h1 class="post-title">CNC Subprograms Basics for CNC Machinists</h1>
+<div class="entry entry-content">
+    <p>CNC programmers and machinists have to daily deal with different kind of component with variety of machining operation.<br>So to keep up with the pace they implement different techniques.</p>
+    <h2><span id="What_is_Sub_Programming">What is Sub Programming?</span></h2>
+    <p>One of such and mostly used technique is Sub-programming.<br>Sub-programming is easy to use and understand with just simple commands like M98, M99 you can achieve greater flexibility.</p>
+    <p>Subprograms are normal cnc programs which are called from a program (normally called main-program) to add some kind of repeatable machining operation.</p>
+    <h2><span id="CNC_Subprogram_Examples">CNC Subprogram Examples</span></h2>
+    <p>&nbsp;</p>
+    <div id="attachment_5991" class="wp-caption alignnone"><img class="size-full wp-image-5991" style="display: block; margin-left: auto; margin-right: auto;" src="img/18.jpg" alt="CNC Sub Programming Basics" width="350" height="324">
+        <p class="wp-caption-text" style="text-align: center;">CNC Sub Programming Basics</p>
+    </div>
+    <h2><span id="For_Sub_Programming_No_Extra_Skill_Required">For Sub Programming No Extra Skill Required</span></h2>
+    <p>You (cnc machinist/ cnc programmer) not have to learn a new G-code or programming style, all you use is the knowledge of cnc programming which you already have.<br>Subprograms are like normal programs which we daily add, write, alter and delete.</p>
+    <h2><span id="CNC_Subprograms_End_with_M99">CNC Subprograms End with M99</span></h2>
+    <p>One important distinction among a main-program and a subprogram is that<br>main-programs end with M30 but<br>subprograms end with M99</p>
+    <h2><span id="CNC_Subprograms_Naming">CNC Subprograms Naming</span></h2>
+    <p>Subprogram are normal cnc programs, so are named (numbered) similar way like O0001, O0005 etc.<br><strong>How to Insert a CNC Subprogram?</strong><br>Subprograms are inserted the same way in cnc machine controls, as other cnc programs are made.</p>
+    <h2><span id="CNC_Subprogram_Call">CNC Subprogram Call</span></h2>
+    <p>Subprograms can be called from main-program multiple times at multiple locations.<br>Even subprograms can call other subprograms.<br>Normally subprogram can be nested up-to four levels.<br>How to call a subprogram read&nbsp;Fanuc Sub Programming</p>
+    <h2><span id="CNC_Subprogram_End">CNC Subprogram End</span></h2>
+    <p>When a sub-program ends with M99 the control is given back to the calling program (main-program), and program execution starts from that point onward.</p>
+    <p><strong>Example</strong><br>If a main-program (O0001) calls a subprogram&nbsp; (O0002) and that subprogram calls another subprogram (O0003).<br>So when O0003 after completion of its machining will end with M99 the control will be returned to O0002 and machining will continue until that sub-program ends with M99, at that call the control will be back to O0001 and that will continue to execute until it reaches M30, which will end the program.</p>
+</div>
+</body></html>

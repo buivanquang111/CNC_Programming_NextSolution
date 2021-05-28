@@ -1,0 +1,19 @@
+<html><head></head><body><h1 class="post-title">CNC Speed &amp; Feed Override</h1>
+<div class="entry entry-content">
+    <p>An introduction to cnc machine speed override and feed override controls and safety instructions which must be adhere to while working with cnc machine feed and speed override.</p>
+    <h2><span id="CNC_Machine_Speed_Override_Feed_Override_Introduction">CNC Machine Speed Override / Feed Override Introduction</span></h2>
+    <p>Normally you program the speed and feed this way,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_n">N10</span> <span class="sh_g">G97</span> <span class="sh_s">S1000</span> <span class="sh_g">G95</span> <span class="sh_f">F0.3</span></pre>
+    <div id="attachment_759" class="wp-caption alignright"><img class="size-full wp-image-759 " style="display: block; margin-left: auto; margin-right: auto;" title="CNC Machine Speed Override and Feed Override" src="img/24.jpg" alt="CNC Machine Speed Override and Feed Override" width="226" height="226">
+        <p class="wp-caption-text" style="text-align: center;">CNC Machine Speed Override and Feed Override</p>
+    </div>
+    <p>Now for one reason or other you want to increase or decrease the speed or feed of the cnc machine <em><strong>for some time</strong></em>, you definitely have a way to just alter the cnc machine program, but there is one more suitable solution the Feed Override and Speed Override Controls. The feed override and speed override are&nbsp;the most suitable and handy way to control the&nbsp;cnc machine feed and speed through cnc control panel.</p>
+    <p>You control the speed and feed in percentage. When the feed override&nbsp;is 100% the actually feed&nbsp;which is programmed will be active. But if the feed override&nbsp;is 50% then the feed&nbsp;will decrease by that ratio, now the machine tools will run with 50% of feed. So if you&nbsp;have programmed 0.5 mm/rev feed then with 100% the 0.5 will be active, but for 50%&nbsp;feed override the actually tool feed will be 0.25 mm/rev.</p>
+    <p>The same rule applies for speed override, for 100% the actual programmed speed will be active and spindle will revolve&nbsp;with the actual programmed speed. but&nbsp;at 50% speed&nbsp;override the spindle speed will drop by 50%.</p>
+    <h2><span id="Feed_Override_Speed_Override_Minimum_Maximum_Values">Feed Override Speed Override Minimum / Maximum Values</span></h2>
+    <p>Normally you can control speed override and feed override from 0% to 120%. At 0% speed override the spindle will stop rotating, and at 0% feed override the tool will stop working ( the tool will be stationary ).</p>
+    <p>No doubt&nbsp;120% feed&nbsp;override and speed override is just <strong>safe</strong>. But some cnc machines give even more flexibility I&nbsp;have worked on a cnc machine which has its feed override 0% to 200%. Normal cnc machine has just 0% to 120% feed&nbsp;override and speed override.</p>
+    <h2><span id="Speed_Override_and_Feed_Override_Safety_Precautions">Speed Override and Feed Override Safety Precautions</span></h2>
+    <p>Whenever handling the speed override and feed override always think about safety, safety of yourself, tool, machine, component and your surroundings. Never try to use the speed override and feed override if you don’t need it. Because when cnc programs are made the speed and feed is properly set for the machined component. The increase in feed or speed might break insert or even tool.</p>
+</div>
+</body></html>

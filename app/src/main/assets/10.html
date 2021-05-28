@@ -1,0 +1,41 @@
+<html><head></head><body><h1 class="post-title">CNC Program Block</h1>
+<div class="entry entry-content">
+    <p>This article is not just for starter level cnc machinists, others can read it as a refresher to their cnc programming skills.</p>
+    <p>While seeing a cnc program on a cnc machine whether that is a cnc lathe cnc mill cnc grinding machine, you will see one thing in common CNC Program Blocks.</p>
+    <h2><span id="CNC_Program_Blocks">CNC Program Blocks</span></h2>
+    <p>Every cnc program is a sequence of many cnc program blocks which are written together to form a complete tool-path for one or many tools.<br>This tool-path tells cnc machine how a cnc machinist want his component be machined.<br>Every single cnc program block adds/alters/modifies some useful information to a cnc program.</p>
+    <div id="attachment_5742" class="wp-caption alignnone"><img class="size-full wp-image-5742" style="display: block; margin-left: auto; margin-right: auto;" src="img/14.jpg" alt="Fanuc CNC Control" width="350" height="266">
+        <p class="wp-caption-text" style="text-align: center;">Fanuc CNC Control</p>
+    </div>
+    <h2><span id="Structure_of_A_CNC_Program_Block">Structure of A CNC Program Block</span></h2>
+    <p>A cnc program block is normally written as</p>
+    <p><code>N50 G01 X100 Y-50.02 F100 M08</code></p>
+    <p>As you can see in above cnc program block these are Six Words separated by Spaces.<br>Every word is a group of alphanumeric characters,<br>every word is lead by a character as above N, G, X, Y, F, M<br>and remaining part consist of some signed/unsigned numeric value as above give 50, 01, 100, –50.02, 100, 08</p>
+    <h2><span id="CNC_Programming_Commands">CNC Programming Commands</span></h2>
+    <p>Everyone of these words has a very important value in cnc programming<br>You can see these words as commands or instructions, there are plenty of commands,<br>some are standard which are commonly found in a cnc program for any cnc machine control.<br>some are cnc machine and cnc control dependent, vary from cnc control to control.</p>
+    <p>But the essence is that a cnc machinists must at least know/understand some of widely used cnc program commands.<br>N50 G01 X100 Y-50.02 F100 M08<br>(this is the same cnc program code given above)</p>
+    <h2><span id="Sequence_Numbers_N_in_CNC_Program_Blocks">Sequence Numbers N in CNC Program Blocks</span></h2>
+    <p>N50 – is the sequence number, in real word you see many lists which are written with serial-numbers, why serial-numbers are given, they just make sorting, searching like tasks easy.<br>same way every cnc program block is given a serial number to make searching, arranging cnc program blocks easy.</p>
+    <p>You (CNC machinists) are not required to use them, you can even write cnc programs without using sequence numbers (N).<br>But cnc program block sequence numbers (N) make life easier, as while you will start learning cnc canned-cycle programming you will see we can’t program without sequence number at all (or at least we have to number at least one or two cnc program blocks G71, G72).</p>
+    <h2><span id="G-Code_Programming">G-Code Programming</span></h2>
+    <p>Then the next word comes G01<br>Every cnc program word which start with leading G is called a G-code.<br>G-codes are widely used /understood cnc machinists can’t even dream programming without G-codes (latest cnc controls give us other ways to program but still they provide a way to program in conventional G-Code style).</p>
+    <p>Every G-code has such a vast functionality and sequence of operation associated with it that every G-code might take a full length tutorial to explain it’s working.<br>Many are already briefly explained here even with program example code which show their use inside cnc program.</p>
+    <p>G01 is the G-code for Linear-Interpolation meaning that, you want the cnc machine tool to go to a specific position with a controlled feed (read below Tool Feed)<br>as you have to tell the specific position and feed amount.</p>
+    <h2><span id="Positioning">Positioning</span></h2>
+    <p>N50 G01 X100 Y-50.02 F100 M08<br>(this is the same cnc program code given above)</p>
+    <p>after G01 you see X100<br>X denotes to an Axis of CNC machine.<br>CNC lathe machine normally have Two-Axis X and Z</p>
+    <div id="attachment_5743" class="wp-caption alignnone"><img class="size-full wp-image-5743" style="display: block; margin-left: auto; margin-right: auto;" src="img/15.png" alt="CNC Lathe Machine Axis X, Z" width="300" height="208">
+        <p class="wp-caption-text" style="text-align: center;">CNC Lathe Machine Axis X, Z</p>
+    </div>
+    <p>CNC milling machine have normally Three-Axis X, Y, Z</p>
+    <div id="attachment_5744" class="wp-caption alignnone"><img class="size-full wp-image-5744" style="display: block; margin-left: auto; margin-right: auto;" src="img/16.png" alt="CNC Mill Axis X Y Z" width="300" height="262">
+        <p class="wp-caption-text" style="text-align: center;">CNC Mill Axis X Y Z</p>
+    </div>
+    <p>as X100 means that you want the tool to move 100 (mm or inch can be set by G-code) in X-axis direction.<br>then comes Y-50.02<br>this tells cnc machine to move tool to –50.02 (mm or inch) in Y-axis direction.</p>
+    <h2><span id="Tool_Feed">Tool Feed</span></h2>
+    <p>F100 here F stands for Feed, Every motion command requires Feed be given so tool can be moved with that amount of feed to a given position.</p>
+    <p>Feed is either given as Feed per Minute or Feed per Revolution.</p>
+    <h2><span id="M-Code_in_CNC_Programming">M-Code in CNC Programming</span></h2>
+    <p>M08 here M stands for M-code (Miscellaneous code).<br>You might think M-codes as machine-codes as they mostly control the behavior of cnc machines.<br>There are many M-codes some are found in every cnc machine control like M08 this is the code to order cnc machine to open the coolant (Coolant ON), as to spin the spindle we use M02 or M03 to stop spindle we use M05.</p>
+</div>
+</body></html>

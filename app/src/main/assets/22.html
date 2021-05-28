@@ -1,0 +1,16 @@
+<html><head></head><body><h1 class="post-title">CNC Dry Run</h1>
+<div class="entry entry-content">
+    <p>Today I am gonna show you the power and the flexibility the cnc machine manufacturers and cnc control manufacturers give a cnc machine setter by integrating the <strong>Dry Run</strong> on cnc machines.</p>
+    <p>On some cnc machines the Dry Run is added as a CNC Machine Mode like Fanuc.</p>
+    <p>On Fanuc cnc control you just select the Dry Run mode and cnc machine is now in Dry Run Mode.</p>
+    <h3>Introduction of Dry Run for CNC Machines</h3>
+    <p>Setting a new component on a cnc machine is not an easy job. You have to go through many important tasks like cnc machine zero offsetting (cnc machine shift value setting), tool offsetting of tools used on cnc machine etc.</p>
+    <p>Now if you have completed these all tasks, now comes the time to run the cnc program for the first time, A really crucial and time consuming cnc task. A small negligence might be cause of an accident on cnc machine (tool breakage etc.).</p>
+    <p>To make the the first run easy and safe the cnc machine manufacturers and cnc control manufacturers provides us a way by which we can easily control the tools feed with feed override.</p>
+    <p>So now the cnc setter is a bit easy because he can now run all the tools with a <strong>Safe Feed</strong>. Now cnc setter easily can lower the tool feed when he feels the tool is entering a bit danger zone, and easily can increase the tool feed (to a rapid feed) when the tool is away from the component (so the time not go wasted with lower feed when tool is away from component).</p>
+    <p><em>In Dry Run all the cnc blocks whether those are starting with G00 or G01 and other G-code like G02/G03 run with the same feed, which is controlled through Feed Override.&nbsp;</em></p>
+    <p>On Fanuc the feed override is controlled through <strong>Handwheel</strong> after feed override button press, and there also exists a Rapid Feed Button which if pressed during Dry Run Mode the cnc machine program block will run with Rapid Feed.</p>
+    <p>&nbsp;</p>
+    <p><em>One point must be cleared for Fanuc control is that feed override also works in Auto Mode and Single Block Mode but in such modes the feed override only controls G01/G02/G03 like G-code. But feed override will not control the G00 (Rapid Traverse).</em></p>
+    <p><em>But in Dry Run Mode all the cnc program will run with the feed which is controlled through Feed Override.</em></p>
+</div></body></html>

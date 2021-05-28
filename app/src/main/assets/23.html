@@ -1,0 +1,43 @@
+<html><head></head><body><h1 class="post-title">How to Set Up CNC Milling Machine</h1>
+<div class="entry entry-content">
+    <p><strong>How to Set Up CNC Milling Machine?</strong></p>
+    <p>Before answering this question “How to Setup CNC Milling Machine”, there are many factors that have to be considered.</p>
+    <ol>
+        <li>Is the machine a vertical or horizontal machine?</li>
+        <li>How many axes machine have?</li>
+        <li>What is the capacity of the tool turret?</li>
+        <li>How are you planning on holding the part (work piece)?</li>
+    </ol>
+    <p>It is also assumed that you know some basic machine practices, like</p>
+    <ol>
+        <li>How to use an edge finder.</li>
+        <li>How to navigate through your machine’s control.</li>
+        <li>Knowledge of basic CNC control commands.</li>
+    </ol>
+    <div id="attachment_10642" class="wp-caption alignnone"><img class="size-full wp-image-10642" style="display: block; margin-left: auto; margin-right: auto;" src="img/25.jpg" alt="LED edge finder" width="350" height="263">
+        <p class="wp-caption-text" style="text-align: center;">LED edge finder</p>
+    </div>
+    <h2>How to Set Up CNC Milling Machine</h2>
+    <p>Now come to the setting up machine, although every CNC Milling machine set-up procedure is slightly different, but here are explained these generic steps which cnc machinists practice on a daily basis for a 3 axis vertical CNC Milling machine.</p>
+    <ol>
+        <li><strong>Clean Surface</strong>: Clean all surfaces like table, vise jaws and part (work piece) with cloth, so that no oil drops, material chips remain there.</li>
+        <li><strong>Load Tool</strong>: Load tools required to complete part (including edge finder, vise leveling at 0 degree).
+            <p>&nbsp;</p>
+            <div id="attachment_10643" class="wp-caption alignnone"><img class="size-full wp-image-10643" style="display: block; margin-left: auto; margin-right: auto;" src="img/26.jpg" alt="Load Tool CNC Mill" width="350" height="111">
+                <p class="wp-caption-text" style="text-align: center;">Load Tool CNC Mill</p>
+            </div>
+        </li>
+        <li><strong>Load Part</strong>: Load part (work piece) in vise or hold your part (work piece) with your machine holding arrangements.</li>
+        <li><strong>X,Y axis’s Offsetting</strong>: Set the part (work piece) offset. For this purpose you may use edge finder or you can do it with your End Mill Cutter (if you are using end mill cutter for tool offset, then read <strong>Tool Offset Article</strong>). First do the zero offset for the X axis. Pick up the X0 position by using edge finder. Go to the zero offset page and add the machine absolute X value to the value currently in the zero offset page’s registry. Do the same for the Y axis.</li>
+        <li><strong>Z axis Offsetting</strong>: After X,Y axis’s offsetting set the tool length offset for each tool by loading first tool in spindle. Manually move the Z axis down until the tool’s tip is near the Z0 position. Get a piece of 1.00 mm shim stock (always use any fix size of shim like 1 mm, 2 mm or 5 mm ) and hold it between the part (work piece) and the tip of the tool. Carefully lower the Z axis in 0.001 mm increments until the shim stock can be pulled with a slight drag. Go to your tool length offset page and enter the machine’s absolute Z value plus -1.00 mm in the tools registry. Repeat procedure to additional tools. Note: -1.00 mm is added for the shim stock’s thickness.</li>
+        <li><strong>Cutter Radius Compensation</strong>: Enter each tool diameter in tool length offset page. That will be helpful when you are using Cutter Radius Compensation in your program.</li>
+        <li><strong>Coolant or Cutting Oil</strong>: Adjust coolant lines because coolant can properly cool tools and wash chips away, and most important coolant will increase the cutter life.
+            <p>&nbsp;</p>
+            <div id="attachment_10644" class="wp-caption alignnone"><img class="size-full wp-image-10644" style="display: block; margin-left: auto; margin-right: auto;" src="img/27.jpg" alt="Adjust coolant lines" width="350" height="234">
+                <p class="wp-caption-text" style="text-align: center;">Adjust coolant lines</p>
+            </div>
+        </li>
+        <li><strong>Cycle start</strong>: Put the machine in low feed, activate single block and then press cycle start. Be careful and read every block programmed and watch each movement the machine makes ready to stop the machine in case there are any programming errors. (You could also run the program 10 mm or whatever above the part (work piece) to make sure everything is good and use Dry Run if you feel it necessary.)</li>
+    </ol>
+</div>
+</body></html>

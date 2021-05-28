@@ -1,0 +1,249 @@
+<html><head></head><body><h1 class="post-title">Din 66025 NC Programming Codes</h1>
+<div class="entry entry-content">
+    <p>DIN stands for “Deutsches Institut für Normung”, meaning “German institute for standardisation”.</p>
+    <p>CNC related DIN standards</p>
+    <ul>
+        <li>DIN 66025-1 Numerical control of machines, format; general requirements</li>
+        <li>DIN 66025-2 Industrial automation; numerical control of machines; format, preparatory and miscellaneous functions</li>
+    </ul>
+    <div id="attachment_9621" class="wp-caption alignnone"><img class="size-full wp-image-9621" style="display: block; margin-left: auto; margin-right: auto;" src="img/11.jpg" alt="Din 66025 NC Programming Codes" width="350" height="235">
+        <p class="wp-caption-text" style="text-align: center;">Din 66025 NC Programming Codes</p>
+    </div>
+    <p>RS-274-D –&nbsp;A version of the&nbsp;G-code&nbsp;computer numerical control language, standardized by EIA.<br>Or<br>RS-274D is the standard for numerically controlled machines developed by the Electronic Industry Association</p>
+    <div id="toc_container" class="no_bullets">
+        <p class="toc_title">&nbsp;</p>
+    </div>
+    <h2><span id="NC_Programming_as_per_ISO_DIN_66025_and_RS274">NC Programming as per ISO (DIN 66025) and RS274</span></h2>
+    <h3><span id="Din_66025_G-Codes">Din 66025 G-Codes</span></h3>
+    <ul>
+        <li>G00 Rapid traverse</li>
+        <li>G01 Linear interpolation with feedrate</li>
+        <li>G02 Circular interpolation (clockwise)</li>
+        <li>G03 Circular interpolation (counter clockwise)</li>
+        <li>G2/G3 Helical interpolation</li>
+        <li>G04 Dwell time in milliseconds</li>
+        <li>G05 Spline definition</li>
+        <li>G06 Spline interpolation</li>
+        <li>G07 Tangential circular interpolation / Helix interpolation / Polygon interpolation / Feedrate interpolation</li>
+        <li>G08 Ramping function at block transition / Look ahead “off”</li>
+        <li>G09 No ramping function at block transition / Look ahead “on”</li>
+        <li>G10 Stop dynamic block preprocessing</li>
+        <li>G11 Stop interpolation during block preprocessing</li>
+        <li>G12 Circular interpolation (cw) with radius</li>
+        <li>G13 Circular interpolation (ccw) with radius</li>
+        <li>G14 Polar coordinate programming, absolute</li>
+        <li>G15 Polar coordinate programming, relative</li>
+        <li>G16 Definition of the pole point of the polar coordinate system</li>
+        <li>G17 Selection of the X, Y plane</li>
+        <li>G18 Selection of the Z, X plane</li>
+        <li>G19 Selection of the Y, Z plane</li>
+        <li>G20 Selection of a freely definable plane</li>
+        <li>G21 Parallel axes “on”</li>
+        <li>G22 Parallel axes “off”</li>
+        <li>G24 Safe zone programming; lower limit values</li>
+        <li>G25 Safe zone programming; upper limit values</li>
+        <li>G26 Safe zone programming “off”</li>
+        <li>G27 Safe zone programming “on”</li>
+        <li>G33 Thread cutting with constant pitch</li>
+        <li>G34 Thread cutting with dynamic pitch</li>
+        <li>G35 Oscillation configuration</li>
+        <li>G38 Mirror imaging “on”</li>
+        <li>G39 Mirror imaging “off”</li>
+        <li>G40 Path compensations “off”</li>
+        <li>G41 Path compensation left of the work piece contour</li>
+        <li>G42 Path compensation right of the work piece contour</li>
+        <li>G43 Path compensation left of the work piece contour with altered approach</li>
+        <li>G44 Path compensation right of the work piece contour with altered approach</li>
+        <li>G50 Scaling</li>
+        <li>G51 Part rotation; programming in degrees</li>
+        <li>G52 Part rotation; programming in radians</li>
+        <li>G53 Zero offset off</li>
+        <li>G54 Zero offset #1</li>
+        <li>G55 Zero offset #2</li>
+        <li>G56 Zero offset #3</li>
+        <li>G57 Zero offset #4</li>
+        <li>G58 Zero offset #5</li>
+        <li>G59 Zero offset #6</li>
+        <li>G63 Feed / spindle override not active</li>
+        <li>G66 Feed / spindle override active</li>
+        <li>G70 Inch format active</li>
+        <li>G71 Metric format active</li>
+        <li>G72 Interpolation with precision stop “off”</li>
+        <li>G73 Interpolation with precision stop “on”</li>
+        <li>G74 Move to home position</li>
+        <li>G75 Curvature function activation</li>
+        <li>G76 Curvature acceleration limit</li>
+        <li>G78 Normalcy function “on” (rotational axis orientation)</li>
+        <li>G79 Normalcy function “off”</li>
+        <li>G80 – G89 for milling applications:</li>
+        <li>G80 Canned cycle “off”</li>
+        <li>G81 Drilling to final depth canned cycle</li>
+        <li>G82 Spot facing with dwell time canned cycle</li>
+        <li>G83 Deep hole drilling canned cycle</li>
+        <li>G84 Tapping or Thread cutting with balanced chuck canned cycle</li>
+        <li>G85 Reaming canned cycle</li>
+        <li>G86 Boring canned cycle</li>
+        <li>G87 Reaming with measuring stop canned cycle</li>
+        <li>G88 Boring with spindle stop canned cycle</li>
+        <li>G89 Boring with intermediate stop canned cycle</li>
+        <li>G81 – G88 for cylindrical grinding applications:</li>
+        <li>G81 Reciprocation without plunge</li>
+        <li>G82 Incremental face grinding</li>
+        <li>G83 Incremental plunge grinding</li>
+        <li>G84 Multi-pass face grinding</li>
+        <li>G85 Multi-pass diameter grinding</li>
+        <li>G86 Shoulder grinding</li>
+        <li>G87 Shoulder grinding with face plunge</li>
+        <li>G88 Shoulder grinding with diameter plunge</li>
+        <li>G90 Absolute programming</li>
+        <li>G91 Incremental programming</li>
+        <li>G92 Position preset</li>
+        <li>G93 Constant tool circumference velocity “on” (grinding wheel)</li>
+        <li>G94 Feed in mm / min (or inch / min)</li>
+        <li>G95 Feed per revolution (mm / rev or inch / rev)</li>
+        <li>G96 Constant cutting speed “on”</li>
+        <li>G97 Constant cutting speed “off”</li>
+        <li>G98 Positioning axis signal to PLC</li>
+        <li>G99 Axis offset</li>
+        <li>G100 Polar transformation “off”</li>
+        <li>G101 Polar transformation “on”</li>
+        <li>G102 Cylinder barrel transformation “on”; cartesian coordinate system</li>
+        <li>G103 Cylinder barrel transformation “on,” with real-time-radius compensation (RRC)</li>
+        <li>G104 Cylinder barrel transformation with center line migration (CLM) and RRC</li>
+        <li>G105 Polar transformation “on” with polar axis selections</li>
+        <li>G106 Cylinder barrel transformation “on” polar-/cylinder-coordinates</li>
+        <li>G107 Cylinder barrel transformation “on” polar-/cylinder-coordinates with RRC</li>
+        <li>G108 Cylinder barrel transformation polar-/cylinder-coordinates with CLM and RRC</li>
+        <li>G109 Axis transformation programming of the tool depth</li>
+        <li>G110 Power control axis selection/channel 1</li>
+        <li>G111 Power control pre-selection V1, F1, T1/channel 1 (Voltage, Frequency, Time)</li>
+        <li>G112 Power control pre-selection V2, F2, T2/channel 1</li>
+        <li>G113 Power control pre-selection V3, F3, T3/channel 1</li>
+        <li>G114 Power control pre-selection T4/channel 1</li>
+        <li>G115 Power control pre-selection T5/channel 1</li>
+        <li>G116 Power control pre-selection T6/pulsing output</li>
+        <li>G117 Power control pre-selection T7/pulsing output</li>
+        <li>G120 Axis transformation; orientation changing of the linear interpolation rotary axis</li>
+        <li>G121 Axis transformation; orientation change in a plane</li>
+        <li>G125 Electronic gear box; plain teeth</li>
+        <li>G126 Electronic gear box; helical gearing, axial</li>
+        <li>G127 Electronic gear box; helical gearing, tangential</li>
+        <li>G128 Electronic gear box; helical gearing, diagonal</li>
+        <li>G130 Axis transformation; programming of the type of the orientation change</li>
+        <li>G131 Axis transformation; programming of the type of the orientation change</li>
+        <li>G132 Axis transformation; programming of the type of the orientation change</li>
+        <li>G133 Zero lag thread cutting “on”</li>
+        <li>G134 Zero lag thread cutting “off”</li>
+        <li>G140 Axis transformation; orientation designation work piece fixed coordinates</li>
+        <li>G141 Axis transformation; orientation designation active coordinates</li>
+        <li>G160 ART activation</li>
+        <li>G161 ART learning function for velocity factors “on”</li>
+        <li>G162 ART learning function deactivation</li>
+        <li>G163 ART learning function for acceleration factors</li>
+        <li>G164 ART learning function for acceleration changing</li>
+        <li>G165 Command filter “on”</li>
+        <li>G166 Command filter “off”</li>
+        <li>G170 Digital measuring signals; block transfer with hard stop</li>
+        <li>G171 Digital measuring signals; block transfer without hard stop</li>
+        <li>G172 Digital measuring signals; block transfer with smooth stop</li>
+        <li>G175 SERCOS-identification number “write”</li>
+        <li>G176 SERCOS-identification number “read”</li>
+        <li>G180 Axis transformation “off”</li>
+        <li>G181 Axis transformation “on” with not rotated coordinate system</li>
+        <li>G182 Axis transformation “on” with rotated / displaced coordinate system</li>
+        <li>G183 Axis transformation; definition of the coordinate system</li>
+        <li>G184 Axis transformation; programming tool dimensions</li>
+        <li>G186 Look ahead; corner acceleration; circle tolerance</li>
+        <li>G188 Activation of the positioning axes</li>
+        <li>G190 Diameter programming deactivation</li>
+        <li>G191 Diameter programming “on” and display of the contact point</li>
+        <li>G192 Diameter programming; only display contact point diameter</li>
+        <li>G193 Diameter programming; only display contact point actual axes center point</li>
+        <li>G200 Corner smoothing “off”</li>
+        <li>G201 Corner smoothing “on” with defined radius</li>
+        <li>G202 Corner smoothing “on” with defined corner tolerance</li>
+        <li>G203 Corner smoothing with defined radius up to maximum tolerance</li>
+        <li>G210 Power control axis selection/Channel 2</li>
+        <li>G211 Power control pre-selection V1, F1, T1/Channel 2</li>
+        <li>G212 Power control pre-selection V2, F2, T2/Channel 2</li>
+        <li>G213 Power control pre-selection V3, F3, T3/Channel 2</li>
+        <li>G214 Power control pre-selection T4/Channel 2</li>
+        <li>G215 Power control pre-selection T5/Channel 2</li>
+        <li>G216 Power control pre-selection T6/pulsing output/Channel 2</li>
+        <li>G217 Power control pre-selection T7/pulsing output/Channel 2</li>
+        <li>G220 Angled wheel transformation “off”</li>
+        <li>G221 Angled wheel transformation “on”</li>
+        <li>G222 Angled wheel transformation “on” but angled wheel moves before others</li>
+        <li>G223 Angled wheel transformation “on” but angled wheel moves after others</li>
+        <li>G265 Distance regulation – axis selection</li>
+        <li>G270 Turning finishing cycle</li>
+        <li>G271 Stock removal in turning</li>
+        <li>G272 Stock removal in facing</li>
+        <li>G274 Peck finishing cycle</li>
+        <li>G275 Outer diameter / internal diameter turning cycle</li>
+        <li>G276 Multiple pass threading cycle</li>
+        <li>G310 Power control axes selection /channel 3</li>
+        <li>G311 Power control pre-selection V1, F1, T1/channel 3</li>
+        <li>G312 Power control pre-selection V2, F2, T2/channel 3</li>
+        <li>G313 Power control pre-selection V3, F3, T3/channel 3</li>
+        <li>G314 Power control pre-selection T4/channel 3</li>
+        <li>G315 Power control pre-selection T5/channel 3</li>
+        <li>G316 Power control pre-selection T6/pulsing output/Channel 3</li>
+        <li>G317 Power control pre-selection T7/pulsing output/Channel 3</li>
+    </ul>
+    <p>Note that some of the above G-codes are not standard. Specific control features, such as laser power control, enable those optional codes.</p>
+    <h3><span id="M_codes">M codes</span></h3>
+    <ul>
+        <li>M00 Unconditional stop</li>
+        <li>M01 Conditional stop</li>
+        <li>M02 End of program</li>
+        <li>M03 Spindle clockwise</li>
+        <li>M04 Spindle counterclockwise</li>
+        <li>M05 Spindle stop</li>
+        <li>M06 Tool change (see Note below)</li>
+        <li>M19 Spindle orientation</li>
+        <li>M20 Start oscillation (configured by G35)</li>
+        <li>M21 End oscillation</li>
+        <li>M30 End of program</li>
+        <li>M40 Automatic spindle gear range selection</li>
+        <li>M41 Spindle gear transmission step 1</li>
+        <li>M42 Spindle gear transmission step 2</li>
+        <li>M43 Spindle gear transmission step 3</li>
+        <li>M44 Spindle gear transmission step 4</li>
+        <li>M45 Spindle gear transmission step 5</li>
+        <li>M46 Spindle gear transmission step 6</li>
+        <li>M70 Spline definition, beginning and end curve 0</li>
+        <li>M71 Spline definition, beginning tangential, end curve 0</li>
+        <li>M72 Spline definition, beginning curve 0, end tangential</li>
+        <li>M73 Spline definition, beginning and end tangential</li>
+        <li>M80 Delete rest of distance using probe function, from axis measuring input</li>
+        <li>M81 Drive On application block (resynchronize axis position via PLC signal during the block)</li>
+        <li>M101-M108 Turn off fast output byte bit 1 (to 8)</li>
+        <li>M109 Turn off all (8) bits in the fast output byte</li>
+        <li>M111-M118 Turn on fast output byte bit 1 (to 8)</li>
+        <li>M121-M128 Pulsate (on/off) fast output byte bit 1 (to 8)</li>
+        <li>M140 Distance regulation “on” (configured by G265)</li>
+        <li>M141 Distance regulation “off”</li>
+        <li>M150 Delete rest of distance using probe function, for a probe input (one of 16, M151-M168)</li>
+        <li>M151-M158 Digital input byte 1 bit 1 (to bit 8) is the active probe input</li>
+        <li>M159 PLC cannot define the bit mask for the probe inputs</li>
+        <li>M160 PLC can define the bit mask for the probe inputs (up to 16)</li>
+        <li>M161-M168 Digital input byte 2 bit 1 (to bit 8) is the active probe input</li>
+        <li>M170 Continue the block processing look ahead of the part program (cancel the M171)</li>
+        <li>M171 Stop the block processing look ahead of the probe input part program segment (like a G10)</li>
+        <li>M200 Activate the handwheel operation in the automatic mode (to introduce an offset in the program)</li>
+        <li>M201-M208 Select the axis (by number from 1 to 8) for the handwheel operation</li>
+        <li>M209 Activate the handwheel operation in the automatic mode, with PLC control of the axis selection</li>
+        <li>M210 Deactivate the handwheel input while in the automatic mode</li>
+        <li>M211 Deactivate this handwheel feature and also remove the handwheel offset (if any)</li>
+        <li>M213 Spindle 2 clockwise</li>
+        <li>M214 Spindle 2 counterclockwise</li>
+        <li>M215 Spindle 2 stop</li>
+        <li>M280 Switchable spindle/rotary axis, rotary axis on, first combination</li>
+        <li>M281 Switchable spindle/rotary axis, rotary axis on, second combination</li>
+        <li>M290 Switchable spindle/rotary axis, spindle enabled, first combination</li>
+        <li>M291 Switchable spindle/rotary axis, spindle enabled, second combination</li>
+    </ul>
+    <p>Note: Other machine functions, like tool change (usually M06) or coolant control, have their M-code value specified by the PLC application not by the CNC software. Most of the M-code values in above list are configurable.<br>Other M-codes (up to M699) can be handled by the PLC application based on the particular machine requirements.</p>
+</div>
+</body></html>

@@ -1,0 +1,20 @@
+<html><head></head><body><h1 class="post-title">CNC Reference Point Return</h1>
+<div class="entry entry-content">
+    <p>What is CNC Machine&nbsp;Reference Point?</p>
+    <p>You are operating a cnc machine sometimes in<strong> auto mode</strong> and other times in&nbsp;<strong>jog mode</strong>. But all the time the values which a cnc operator sees time to time regularly are the cnc machine current position. While the cnc machine is running in auto mode the current-axis-position values will regularly change. And while in jog mode you move cnc machine axis you see the current axis values are changing.</p>
+    <div id="attachment_1655" class="wp-caption alignright"><img class="size-full wp-image-1655 " style="display: block; margin-left: auto; margin-right: auto;" title="CNC Zero Return or Reference Point Return" src="img/23.jpg" alt="CNC Zero Return or Reference Point Return" width="128" height="128">
+        <p class="wp-caption-text" style="text-align: center;">CNC Zero Return or Reference Point Return</p>
+    </div>
+    <p>Now you note the current values on a paper, and turn-off the cnc machine. Now turn-on the cnc machine, now again take the current axis position values, The values have changed, Why?</p>
+    <p>When your cnc machine is switched-on, it has no provision to know the current axis position.</p>
+    <p>So at this time the cnc machine needs a way to tell cnc machine control where it is.</p>
+    <p>So better that we tell the cnc machine where it is now, it is much better to take the cnc machine axis to a specified and fixed point whose values are known, and now tell cnc machine the current position.</p>
+    <p>All the above work is automatically done when we take the cnc machine to reference point or we zero return the cnc machine.</p>
+    <p>The reference point is a fixed point inside the cnc machine whose values are already stored in the cnc machine. So when we take the cnc machine to the reference point those values automatically get active and the cnc machine comes to know its current axis position.</p>
+    <p>If you want to go more deeper then, there are limit switches for every axis in cnc machine to tell the reference point position. So when we take the cnc machine to the reference point those limit switches got active and tell the cnc machine control that the specified axis is reaching to its reference point position, so the cnc control update the current position for that specific axis because cnc control already knows the position at that point, and this is repeated with all the cnc machine axis.</p>
+    <h2>Fanuc G28&nbsp;G Code for&nbsp;CNC Zero Return</h2>
+    <p>You can make a call in MDI mode on a cnc machine with fanuc cnc control.</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_g">G28</span> U0 W0</pre>
+    <p>This will automatically take all the cnc machine axis to the Reference Point, or you might say G28 will automatically zero return the cnc machine.</p>
+</div>
+</body></html>

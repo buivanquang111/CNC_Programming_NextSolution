@@ -1,0 +1,15 @@
+<html><head></head><body><h1 class="post-title">CNC Optional Block Skip</h1>
+<div class="entry entry-content">
+    <p>If you have ever run a cnc machine you surely will have come across the <strong>Optional Block Skip</strong>. On some cnc machine controls it is also called <strong>Block Delete</strong>.</p>
+    <p>“/” is used as the skip sign.</p>
+    <p>The cnc program blocks which has skip sign prior the program block just skipped or omitted when the cnc program is executed.</p>
+    <p>The cnc program example is under</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_n">N5</span> <span class="sh_g">G00</span> <span class="sh_x">X20</span> <span class="sh_z">Z0</span>
+/<span class="sh_n">N6</span> <span class="sh_g">G01</span> <span class="sh_x">X0</span> <span class="sh_f">F0.2</span>
+/<span class="sh_n">N7</span> GO1 <span class="sh_x">X20</span>
+<span class="sh_n">N8</span> <span class="sh_g">G01</span> <span class="sh_z">Z-20</span></pre>
+    <p>The above cnc program when run or executed on a cnc machine</p>
+    <p>the cnc program block number 5 and 8 will only be executed,</p>
+    <p>and block number 6 and 7 will be skipped or not be machined.</p>
+    <p><strong>Optional Block Skip or Block Delete only works if the optional block skip swith is “on.”</strong></p>
+</div></body></html>

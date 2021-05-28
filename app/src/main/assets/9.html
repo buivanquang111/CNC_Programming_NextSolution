@@ -1,0 +1,20 @@
+<html><head></head><body><h1 class="post-title">CNC M Codes Introduction</h1>
+<div class="entry entry-content">
+    <p>I am sure you might have read my previous blog post about cnc machine G-code. As the previous post illustrates that the <em>G-codes instructs the cnc machine about the machining contour and about the cutting tool feed and about the cnc spindle speed</em>.</p>
+    <p>The same way another type of codes exist to control the actual machine workings, these codes are called cnc machine M-Code. The M codes controls the actual cnc machine hardware and cnc machine working.</p>
+    <h2><span id="M-Codes_as_CNC_Program_Control_Instructions">M-Codes as CNC Program Control Instructions</span></h2>
+    <p>M codes controls cnc program executions such as the cnc machine program execution Stop (M00 M01 M02) . With the help of M codes we can not only stop the actual cnc machine program execution but also we can even reset the cnc machine program (M30).</p>
+    <h2><span id="M-Codes_as_CNC_Machine_Control_Instructions">M-Codes as CNC Machine Control Instructions</span></h2>
+    <div id="attachment_680" class="wp-caption alignright"><img class="size-full wp-image-680 " style="display: block; margin-left: auto; margin-right: auto;" title="CNC M Codes Introduction for CNC Machinists" src="img/13.jpg" alt="CNC M Codes Introduction for CNC Machinists" width="225" height="220">
+        <p class="wp-caption-text" style="text-align: center;">CNC M Codes Introduction for CNC Machinists</p>
+    </div>
+    <p>If you read all the M-codes you will notice that most of the cnc m-codes are actually cnc machine hardware control instructions.</p>
+    <p>Let us start from the <em>cnc machine spindle related m-codes</em>.</p>
+    <p>The M03 m-code instructs the cnc machine that the cnc machine spindle must start to rotate in clockwise direction (Although there are conditions which must be met to make cnc machine spindle ready before we apply the M03 the conditions are as the spindle speed in RPM(Revolution Per Minute) must be given with the G-code G97 and cnc machine Gear must be selected with M41 or M42 and cnc machine spindle must be in close position for some cnc machines the safety guard must also be closed wheoo…. calm down now your cnc machine spindle must rotate).</p>
+    <p>Likewise M04 instructs the cnc machine to rotate the cnc machine spindle in counter clockwise direction.</p>
+    <p>The same way M05 instructs the cnc machine to stop the cnc machine spindle rotation at all.</p>
+    <p>There are other such m-codes as M08 M09. The M08 is to switch on the cnc machine coolant and M09 to switch off the cnc machine coolant. Although on some cnc machine M07 is also used to switch on the cnc machine coolant but on such cnc machine there are actually two ways for the coolant flow, so to use the other way we can use M07, But for normal use which is coolant flow through the cnc machine tool’s coolant nozzle we use M08.</p>
+    <p>As stated above the M41 M42 m-codes are cnc machine Gear control m-codes. Normally every cnc machine has gears to manage the spindle speed but there are exceptions.</p>
+    <p>I hope you might have enjoyed this blog post about cnc machine m-codes.</p>
+</div>
+</body></html>

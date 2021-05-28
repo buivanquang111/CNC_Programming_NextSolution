@@ -1,0 +1,32 @@
+<html><head></head><body><h1 class="post-title">CNC G Code Introduction</h1>
+<div class="entry entry-content">
+    <p>No ever cnc program can be complete or workable without CNC G codes and M codes.</p>
+    <p>This article actually describes what CNC G codes are and why any cnc program is not complete without them.</p>
+    <p>For a full Fanuc G Codes List read Fanuc G Codes List.</p>
+    <div id="attachment_531" class="wp-caption alignright"><img class="size-full wp-image-531 " style="display: block; margin-left: auto; margin-right: auto;" title="CNC G-Code Introduction for CNC Programmers" src="img/7.jpg" alt="CNC G-Code Introduction for CNC Programmers" width="215" height="160">
+        <p class="wp-caption-text" style="text-align: center;">CNC G-Code Introduction for CNC Programmers</p>
+    </div>
+    <h2><span id="CNC_G_Codes">CNC G Codes</span></h2>
+    <p>CNC G Code in a broader way are instructions to the cnc machine tools.</p>
+    <p><strong>CNC G-code are instructions to cnc machine tools</strong> like</p>
+    <p>which way to go whether</p>
+    <p>to travel in a straight line (G01)</p>
+    <p>or in a curve (G02, G03)</p>
+    <p>or in taper (G01)</p>
+    <p>and with what feed (G94, G95).</p>
+    <p>Whether to travel at full feed (G00)</p>
+    <p>or with a controlled feed (G94, G95).</p>
+    <p>and if there is a stay how long will the stay be a cnc programmer calls this stay <em>Dwell Time</em>. (G04)</p>
+    <p>The G codes also provide some very crucial data at program start and at run time like</p>
+    <p>Tool-Offsetting data (G10)</p>
+    <p>and CNC Workpiece-Zero-Point or CNC Workshift Setting, (G10, G54, G55)</p>
+    <p>as without this data running a cnc machine is just a dream.</p>
+    <p>So after reading the above paragraph you might have understood the power of the G codes. They provide crucial and sensitive data at run time and instruct the cnc machine tools to run on the given path with a controlled feed but keeping that crucial data in mind all the time.</p>
+    <p>If I fully translate the above paragraph in cnc G code then I will say that the cnc machine will read machine zero offset with G54 and Tool-Offset with G10 and run on a path which is carved with G00 G01 G02 G03 and run with a control feed the feed is controlled with G94 G95 G96.</p>
+    <h2><span id="Important_G_Codes">Important G Codes</span></h2>
+    <h3><span id="G00">G00</span></h3>
+    <p>The G00 G code of cnc machine tell the cnc machine to bring the tool to a given point given with G00 at the full feed, the feed of the G00 is given in the cnc machine parameters and normally never changed, but can be changed if really needed.</p>
+    <h3><span id="G01">G01</span></h3>
+    <p>The G01 G-code of cnc machine tell the cnc machine to bring the tool with a controlled feed, unlike G00 whose feed is buried in cnc machine parameters the feed of the G01 code is given in the same program block or in the prior blocks. To control the feed another G code is used which is G95.</p>
+</div>
+</body></html>

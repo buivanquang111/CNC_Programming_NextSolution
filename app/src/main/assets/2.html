@@ -1,0 +1,45 @@
+<html><head></head><body><h1 class="post-title">CNC Programming for CNC Machinists</h1>
+<div class="entry entry-content">
+    <p>CNC Programming is not that difficult to learn and master, specially cnc programming for cnc lathe machines. Because cnc lathe machines have only two axis to work with X-axis and Z-axis.</p>
+    <div id="attachment_2751" class="wp-caption alignright"><img class="size-full wp-image-2751 " style="display: block; margin-left: auto; margin-right: auto;" title="CNC Programming for CNC Machinists" src="img/6.jpg" alt="CNC Programming for CNC Machinists" width="300" height="200">
+        <p class="wp-caption-text">CNC Programming for CNC Machinists</p>
+    </div>
+    <p>X-axis of cnc lathe machine controls the diameter of the component.</p>
+    <p>Z-axis of cnc lathe machine controls the length of the component.</p>
+    <p>To learn cnc programming you better start from the easy to program drawings.</p>
+    <p>Here are some basic cnc programming examples</p>
+    <ul>
+        <li>CNC Programming for Beginners a Simple CNC Programming Example</li>
+        <li>Lathe CNC Programming Example</li>
+        <li>CNC Milling Machine Programming Example for Beginners</li>
+    </ul>
+    <p>To start cnc programming for a cnc lathe machine the process is under.</p>
+    <p>You first have to call the proper cutting tool for the machining. This step is cnc machine dependent but on fanuc cnc control you will use following cnc programming command,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_t">T5</span> or <span class="sh_t">T0505</span></pre>
+    <p>Now load workshift value, the following cnc programming commands are used to load the workshift,<br>G10 , G54<br>Rotate the main spindle of cnc lathe machine. The cnc programming command to rotate the main spindle is under,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_g">G97</span> <span class="sh_s">S1000</span></pre>
+    <p>The above cnc programming command will not make the spindle to rotate this will actually only tell the cnc machine that I want to rotate the main spindle at 1000RPM (Revolution Per Minute),</p>
+    <p>but to actually rotate to spindle you have to give another cnc programming command or M-Code or M-Function to tell cnc machine to rotate the spindle in CW (Clockwise rotation) or CCW (Counter-Clockwise rotation).</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_m">M03</span> <span class="sh_comment">(Rotate spindle in CW ditection)</span>
+<span class="sh_m">M04</span> <span class="sh_comment">(Rotate spindle in CCW direction)</span>
+<span class="sh_m">M05</span> <span class="sh_comment">(Stop the spindle)</span></pre>
+    <p>To turn the cnc machine Coolant ON, so our tool insert and component can’t get hot you need to turn on the coolant, the cnc programming commands or M functions are as under</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_m">M08</span> <span class="sh_comment">(Coolant ON)</span>
+<span class="sh_m">M09</span> <span class="sh_comment">(Coolant OFF)</span></pre>
+    <p>Now the time to actually move the tool, there are multiple cnc programming commands (G-codes) to travel the tool.</p>
+    <p>To travel the tool at a fast feed or in cnc words we say it Rapid Traverse the tool we will use following cnc programming command or G-code,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_g">G00</span> <span class="sh_x">X...</span> <span class="sh_z">Z...</span></pre>
+    <p>The X and Z values with G00 are the destination coordinates for the tool.</p>
+    <p>To travel the tool at a control feed or to Linear Traverse the tool, we will use following cnc programming command or G-Code,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_g">G01</span> <span class="sh_x">X...</span> <span class="sh_z">Z...</span> <span class="sh_f">F...</span></pre>
+    <p>The X and Z values with G01 are destination coordinated in X and Z axis. The F value is the tool feed, This might be G95 (Feed Per Revolution).</p>
+    <p>To machine Arc or Circular Interpolation on component, the following cnc programming commands or G-codes are used,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_g">G02</span> <span class="sh_x">X...</span> <span class="sh_z">Z...</span> R...
+<span class="sh_g">G03</span> <span class="sh_x">X...</span> <span class="sh_z">Z...</span> R...</pre>
+    <p>G02 cnc programming g-code is used to program a Clock-wise Arc, and G03 G-code is used to program a Counter-Clockwise Arc. The X and Z values are destination coordinates and R is the Arc Radius.</p>
+    <p>This way you will complete all the cnc program.</p>
+    <p>To make an end to the cnc program you will use following cnc programming command or M-code,</p>
+    <pre class="sh_spec sh_sourceCode"><span class="sh_m">M30</span></pre>
+    <p>M30 End the cnc program and brings the cursor to the program start.</p>
+</div>
+</body></html>
