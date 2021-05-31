@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NextSolution_ex1">
+        <activity android:name=".YeuThichAcivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6714220800738385~7891476771" />
+
         <activity android:name=".OnboardingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailCNC" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

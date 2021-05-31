@@ -1,5 +1,7 @@
 package com.example.nextsolution_ex1
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -9,20 +11,44 @@ import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import android.widget.Toast
+import com.example.nextsolution_ex1.database.CNCDataBase
+import com.example.nextsolution_ex1.database.CNCObject
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
+import org.json.JSONObject
 
 class DetailCNC : AppCompatActivity() {
+    var arrayList: ArrayList<CNCObject> = arrayListOf()
+    lateinit var title: String
+    lateinit var url: String
+    var index: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_c_n_c)
 
+        MobileAds.initialize(this){}
+        MobileAds.setRequestConfiguration(
+            RequestConfiguration.Builder()
+                .setTestDeviceIds(listOf("ABCDEF012345"))
+                .build()
+        )
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
         val intent = intent
-        var index: Int = intent.getIntExtra("index", 0)
-        val url: String? = intent.getStringExtra("url")
+        title = intent.getStringExtra("title").toString()
+         index = intent.getIntExtra("index", 0)
+         url = intent.getStringExtra("url").toString()
         val list = intent.getParcelableArrayListExtra<CNC>("list")
         url?.let { loadWebView(it) }
         textViewIndexDetail.text = "${index + 1}/${list?.size}"
-
+        
         imageViewNext.setOnClickListener {
             index += 1
             if (index <= list!!.size - 1) {
@@ -48,28 +74,7 @@ class DetailCNC : AppCompatActivity() {
             zoomControls.hide()
         }
         zoomControls.hide()
-        /*var y: Int = 0
-        webView.setOnTouchListener {
-            v, event ->
-            var action = event.actionMasked
-            when(action){
-                MotionEvent.ACTION_DOWN -> {
-                    y =event.getY().toInt()
-                }
-                MotionEvent.ACTION_MOVE -> {
-                    if (y>event.getY()){
-                        zoomControls.show()
-                    }else if(y<event.getY()){
-                        zoomControls.hide()
-                    }
-                    y = event.getY().toInt()
-                }
-                MotionEvent.ACTION_UP -> {
-                    mHandler.postDelayed(hideZoom,5000)
-                }
-            }
-            false
-        }*/
+
         webView.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 zoomControls.show()
@@ -102,6 +107,20 @@ class DetailCNC : AppCompatActivity() {
             }
 
         })
+
+        imageViewTymTrang.setOnClickListener {
+            imageViewTymTrang.visibility= View.GONE
+            imageViewTymDo.visibility = View.VISIBLE
+
+            var cncObject: CNCObject = CNCObject(index,title,url)
+
+
+
+           /* arrayList.add(CNC(index,title,url))
+            saveData()*/
+
+        }
+
     }
 
     fun loadWebView(url: String) {
@@ -109,5 +128,32 @@ class DetailCNC : AppCompatActivity() {
         url?.let { webView.loadUrl(it) }
         var webSettings: WebSettings = webView.settings
         webSettings.javaScriptEnabled = true
+    }
+
+   /* fun saveData(){
+        var sharePreferences: SharedPreferences = getSharedPreferences("listTym", Context.MODE_PRIVATE)
+        var editor: SharedPreferences.Editor = sharePreferences.edit()
+        var gson: Gson = Gson()
+        var json: String = gson.toJson(arrayList)
+        editor.putString("list",json)
+        editor.apply()
+    }*/
+
+
+
+
+    override fun onPause() {
+        adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        adView.resume()
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        adView.destroy()
+        super.onDestroy()
     }
 }

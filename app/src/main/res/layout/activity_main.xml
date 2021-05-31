@@ -65,6 +65,14 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="50dp"
             android:src="@drawable/ic_share" />
+        <ImageView
+            android:id="@+id/imageViewListTym"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/imageViewShare"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_listtym" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

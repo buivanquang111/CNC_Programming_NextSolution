@@ -18,6 +18,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         setData()
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -81,6 +85,11 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
             intentShare.putExtra(Intent.EXTRA_TEXT, url)
             startActivity(Intent.createChooser(intentShare, "Share with"))
         }
+        imageViewListTym.setOnClickListener {
+            var intent: Intent = Intent(this, YeuThichAcivity::class.java)
+            intent.putParcelableArrayListExtra("listGoTym", list)
+            startActivity(intent)
+        }
 
     }
 
@@ -129,6 +138,7 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
     override fun onItemClick(position: Int) {
         var intent: Intent = Intent(this, DetailCNC::class.java)
         intent.putExtra("index", list[position].index)
+        intent.putExtra("title",list[position].title)
         intent.putExtra("url", list[position].url)
         intent.putParcelableArrayListExtra("list", list)
         startActivity(intent)

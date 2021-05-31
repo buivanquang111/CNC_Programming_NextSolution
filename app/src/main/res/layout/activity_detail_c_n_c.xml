@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".DetailCNC">
 
     <TextView
@@ -49,13 +50,41 @@
             android:text="1/30"
             android:textSize="28dp" />
     </RelativeLayout>
-
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail" />
+    <ImageView
+        android:id="@+id/imageViewTymTrang"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail"
+        android:src="@drawable/tym_trang"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <ImageView
+        android:id="@+id/imageViewTymDo"
+        android:visibility="gone"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail"
+        android:src="@drawable/ic_tymdo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" ></com.google.android.gms.ads.AdView>
 
     <ZoomControls
         android:id="@+id/zoomControls"
