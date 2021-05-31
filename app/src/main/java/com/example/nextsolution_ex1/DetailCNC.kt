@@ -16,22 +16,34 @@ import com.example.nextsolution_ex1.database.CNCObject
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
-import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
-import org.json.JSONObject
 
-class DetailCNC : AppCompatActivity() {
+import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import org.json.JSONObject
+import kotlin.coroutines.CoroutineContext
+
+class DetailCNC : AppCompatActivity(),CoroutineScope {
+    private var cncDB: CNCDataBase?=null
     var arrayList: ArrayList<CNCObject> = arrayListOf()
     lateinit var title: String
     lateinit var url: String
     var index: Int = 0
 
+    private lateinit var mJob: Job
+    override val coroutineContext: CoroutineContext
+    get() = mJob+Dispatchers.Main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_c_n_c)
 
+        //sqlite
+        mJob = Job()
+        cncDB = CNCDataBase.getDatabase(this)
+        //quang cao
         MobileAds.initialize(this){}
         MobileAds.setRequestConfiguration(
             RequestConfiguration.Builder()
@@ -46,11 +58,37 @@ class DetailCNC : AppCompatActivity() {
          index = intent.getIntExtra("index", 0)
          url = intent.getStringExtra("url").toString()
         val list = intent.getParcelableArrayListExtra<CNC>("list")
+
+        //check tym
+
+
+        launch {
+            val cnc: List<CNCObject>? = cncDB?.cncDao()?.getListCNC()
+            for (i in 0..cnc!!.size-1){
+                if (cnc[i].index == index){
+                    imageViewTymDo.visibility=View.VISIBLE
+                    imageViewTymTrang.visibility = View.GONE
+                }
+            }
+        }
+
+
         url?.let { loadWebView(it) }
         textViewIndexDetail.text = "${index + 1}/${list?.size}"
         
         imageViewNext.setOnClickListener {
             index += 1
+            imageViewTymTrang.visibility =View.VISIBLE
+            imageViewTymDo.visibility = View.GONE
+            launch {
+                val cnc: List<CNCObject>? = cncDB?.cncDao()?.getListCNC()
+                for (i in 0..cnc!!.size-1){
+                    if (cnc[i].index == index){
+                        imageViewTymDo.visibility=View.VISIBLE
+                        imageViewTymTrang.visibility = View.GONE
+                    }
+                }
+            }
             if (index <= list!!.size - 1) {
                 val urlNext: String = list[index].url
                 textViewIndexDetail.text = "${index + 1}/${list.size}"
@@ -61,6 +99,17 @@ class DetailCNC : AppCompatActivity() {
         }
         imageViewBack.setOnClickListener {
             index -= 1
+            imageViewTymTrang.visibility =View.VISIBLE
+            imageViewTymDo.visibility = View.GONE
+            launch {
+                val cnc: List<CNCObject>? = cncDB?.cncDao()?.getListCNC()
+                for (i in 0..cnc!!.size-1){
+                    if (cnc[i].index == index){
+                        imageViewTymDo.visibility=View.VISIBLE
+                        imageViewTymTrang.visibility = View.GONE
+                    }
+                }
+            }
             if (index >= 0) {
                 val urlBack: String = list?.get(index)!!.url
                 textViewIndexDetail.text = "${index + 1}/${list.size}"
@@ -111,14 +160,10 @@ class DetailCNC : AppCompatActivity() {
         imageViewTymTrang.setOnClickListener {
             imageViewTymTrang.visibility= View.GONE
             imageViewTymDo.visibility = View.VISIBLE
-
-            var cncObject: CNCObject = CNCObject(index,title,url)
-
-
-
-           /* arrayList.add(CNC(index,title,url))
-            saveData()*/
-
+            launch {
+                cncDB?.cncDao()?.insertCNC(CNCObject(index = index,title = title,url = url))
+                finish()
+            }
         }
 
     }
@@ -129,17 +174,6 @@ class DetailCNC : AppCompatActivity() {
         var webSettings: WebSettings = webView.settings
         webSettings.javaScriptEnabled = true
     }
-
-   /* fun saveData(){
-        var sharePreferences: SharedPreferences = getSharedPreferences("listTym", Context.MODE_PRIVATE)
-        var editor: SharedPreferences.Editor = sharePreferences.edit()
-        var gson: Gson = Gson()
-        var json: String = gson.toJson(arrayList)
-        editor.putString("list",json)
-        editor.apply()
-    }*/
-
-
 
 
     override fun onPause() {
@@ -154,6 +188,7 @@ class DetailCNC : AppCompatActivity() {
 
     override fun onDestroy() {
         adView.destroy()
+        mJob.cancel()
         super.onDestroy()
     }
 }

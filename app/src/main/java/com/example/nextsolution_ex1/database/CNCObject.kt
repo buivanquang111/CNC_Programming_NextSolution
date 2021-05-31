@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "favourite")
 data class CNCObject(
-        @PrimaryKey var index: Int,
+        @PrimaryKey(autoGenerate = true) var id: Int=0,
+        var index: Int,
         var title: String,
         var url: String)
