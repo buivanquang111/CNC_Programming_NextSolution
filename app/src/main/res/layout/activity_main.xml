@@ -40,7 +40,7 @@
             android:layout_centerVertical="true"
             android:layout_margin="8dp"
             android:layout_marginLeft="5dp"
-            android:layout_toLeftOf="@+id/imageViewShare"
+            android:layout_toLeftOf="@+id/imageViewListTym"
             android:visibility="gone">
 
             <EditText

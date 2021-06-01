@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         setData()
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
@@ -47,13 +45,18 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
             imageViewSearch.visibility = View.GONE
 
             editTextSearch.setOnEditorActionListener(object : TextView.OnEditorActionListener {
-                override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                override fun onEditorAction(
+                    v: TextView?,
+                    actionId: Int,
+                    event: KeyEvent?
+                ): Boolean {
 
                     if (actionId == EditorInfo.IME_ACTION_SEARCH ||
-                            actionId == EditorInfo.IME_ACTION_DONE ||
-                            event != null &&
-                            event.action == KeyEvent.ACTION_DOWN &&
-                            event.keyCode == KeyEvent.KEYCODE_ENTER) {
+                        actionId == EditorInfo.IME_ACTION_DONE ||
+                        event != null &&
+                        event.action == KeyEvent.ACTION_DOWN &&
+                        event.keyCode == KeyEvent.KEYCODE_ENTER
+                    ) {
                         if (event == null || !event.isShiftPressed()) {
                             var titleSearch: String = editTextSearch.text.toString()
                             listSearch.clear()
@@ -73,15 +76,22 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
         imageViewClose.setOnClickListener {
             relativeLayoutSearch.visibility = View.GONE
             imageViewSearch.visibility = View.VISIBLE
-            recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-            recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+            recyclerView.layoutManager =
+                LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            recyclerView.addItemDecoration(
+                DividerItemDecoration(
+                    this,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
             recyclerView.adapter = adapter
         }
         imageViewShare.setOnClickListener {
             var intentShare: Intent = Intent(Intent.ACTION_SEND)
             intentShare.type = "text/plain"
             intentShare.putExtra(Intent.EXTRA_SUBJECT, "My app")
-            var url: String = "https://play.google.com/store/apps/details?id=com.devtd.Learn_CNC_Programming"
+            var url: String =
+                "https://play.google.com/store/apps/details?id=com.devtd.Learn_CNC_Programming"
             intentShare.putExtra(Intent.EXTRA_TEXT, url)
             startActivity(Intent.createChooser(intentShare, "Share with"))
         }
@@ -98,11 +108,41 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
         list.add(CNC(1, "[2] How to Make CNC Program?", "file:///android_asset/1.html"))
         list.add(CNC(2, "[3] Make Your First CNC Program", "file:///android_asset/2.html"))
         list.add(CNC(3, "[4] G Code Introduction", "file:///android_asset/3.html"))
-        list.add(CNC(4, "[5] Modal G-Code- Learn G Code Programming", "file:///android_asset/4.html"))
-        list.add(CNC(5, "[6] One Shot G-Codes- Learn G Code Programming", "file:///android_asset/5.html"))
-        list.add(CNC(6, "[7] Mill/Lathe G/M-Codes- Learn G Code Programming", "file:///android_asset/6.html"))
-        list.add(CNC(7, "[8] Popular CNC G-Code Lists- Learn G Code Programming", "file:///android_asset/7.html"))
-        list.add(CNC(8, "[9] Din 66025 Programming- Learn G Code Programming", "file:///android_asset/8.html"))
+        list.add(
+            CNC(
+                4,
+                "[5] Modal G-Code- Learn G Code Programming",
+                "file:///android_asset/4.html"
+            )
+        )
+        list.add(
+            CNC(
+                5,
+                "[6] One Shot G-Codes- Learn G Code Programming",
+                "file:///android_asset/5.html"
+            )
+        )
+        list.add(
+            CNC(
+                6,
+                "[7] Mill/Lathe G/M-Codes- Learn G Code Programming",
+                "file:///android_asset/6.html"
+            )
+        )
+        list.add(
+            CNC(
+                7,
+                "[8] Popular CNC G-Code Lists- Learn G Code Programming",
+                "file:///android_asset/7.html"
+            )
+        )
+        list.add(
+            CNC(
+                8,
+                "[9] Din 66025 Programming- Learn G Code Programming",
+                "file:///android_asset/8.html"
+            )
+        )
         list.add(CNC(9, "[10] M Code Introduction", "file:///android_asset/9.html"))
         list.add(CNC(10, "[11] CNC Program Block", "file:///android_asset/10.html"))
         list.add(CNC(11, "[12] Why to use Canned Cycles?", "file:///android_asset/11.html"))
@@ -138,7 +178,7 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
     override fun onItemClick(position: Int) {
         var intent: Intent = Intent(this, DetailCNC::class.java)
         intent.putExtra("index", list[position].index)
-        intent.putExtra("title",list[position].title)
+        intent.putExtra("title", list[position].title)
         intent.putExtra("url", list[position].url)
         intent.putParcelableArrayListExtra("list", list)
         startActivity(intent)
@@ -149,15 +189,19 @@ class MainActivity : AppCompatActivity(), CNCAdapter.OnItemClickLister {
         var alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Exit")
         alertDialogBuilder.setMessage("Are you sure you want to quit application ?")
-        alertDialogBuilder.setPositiveButton("YES", DialogInterface.OnClickListener { dialog, which ->
-            moveTaskToBack(true)
-            System.exit(0)
+        alertDialogBuilder.setPositiveButton(
+            "YES",
+            DialogInterface.OnClickListener { dialog, which ->
+                moveTaskToBack(true)
+                System.exit(0)
 
-        })
-        alertDialogBuilder.setNegativeButton("NO", DialogInterface.OnClickListener { dialog, which ->
-            dialog.cancel()
+            })
+        alertDialogBuilder.setNegativeButton(
+            "NO",
+            DialogInterface.OnClickListener { dialog, which ->
+                dialog.cancel()
 
-        })
+            })
 
         var alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.show()

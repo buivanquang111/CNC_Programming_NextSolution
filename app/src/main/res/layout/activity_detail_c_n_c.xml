@@ -55,25 +55,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail" />
     <ImageView
         android:id="@+id/imageViewTymTrang"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail"
-        android:src="@drawable/tym_trang"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_star_trang"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
     <ImageView
         android:id="@+id/imageViewTymDo"
         android:visibility="gone"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutDetail"
-        android:src="@drawable/ic_tymdo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_star_vang"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"

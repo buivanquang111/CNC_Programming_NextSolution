@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "128363897654",
+    "project_id": "cnc-tutorial",
+    "storage_bucket": "cnc-tutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128363897654:android:318194ae7240cc15cbc997",
+        "android_client_info": {
+          "package_name": "com.globaltutorial.cnc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128363897654-8mrar2u5hd4aol4or0q2iqpc57dg229u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.globaltutorial.cnc",
+            "certificate_hash": "e1764973ce0d5218a5e813a8989daf6f645139fd"
+          }
+        },
+        {
+          "client_id": "128363897654-n69stpfm2psohh10d9n5no7p5fon6c9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaQqLxfMUzRtP6jACu9mca4YTVYT9ruUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128363897654-n69stpfm2psohh10d9n5no7p5fon6c9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
