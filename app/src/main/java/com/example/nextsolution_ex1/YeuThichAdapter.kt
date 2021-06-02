@@ -10,6 +10,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nextsolution_ex1.database.CNCDataBase
 import com.example.nextsolution_ex1.database.CNCObject
+import kotlinx.android.synthetic.main.item_recyclerview.view.*
+import kotlinx.android.synthetic.main.item_yeuthich.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

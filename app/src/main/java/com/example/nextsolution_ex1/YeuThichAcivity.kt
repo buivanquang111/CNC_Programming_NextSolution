@@ -22,7 +22,7 @@ class YeuThichAcivity : AppCompatActivity(),CoroutineScope,YeuThichAdapter.OnIte
 
     private lateinit var mJob: Job
     override val coroutineContext: CoroutineContext
-    get() = mJob+Dispatchers.Main
+        get() = mJob+Dispatchers.Main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +31,14 @@ class YeuThichAcivity : AppCompatActivity(),CoroutineScope,YeuThichAdapter.OnIte
         mJob = Job()
         cncDB = CNCDataBase.getDatabase(this)
 
+        launch {
+            var cnc: List<CNCObject>?= cncDB?.cncDao()?.getListCNC()
+            arrayListTym = cnc
+
+        }
+
         val intent1=intent
         list = intent1.getParcelableArrayListExtra<CNC>("listGoTym") as ArrayList<CNC>
-
         adapter = YeuThichAdapter(YeuThichAcivity@this,cncDB!!)
         recyclerViewTym.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerViewTym.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
@@ -42,11 +47,8 @@ class YeuThichAcivity : AppCompatActivity(),CoroutineScope,YeuThichAdapter.OnIte
     }
 
     override fun onItemClick(position: Int) {
-        var cnc: List<CNCObject>?
-        launch {
-             cnc= cncDB?.cncDao()?.getListCNC()
-            arrayListTym = cnc
-        }
+        //var cnc: List<CNCObject>?
+
 
         var intent: Intent = Intent(this, DetailCNC::class.java)
         intent.putExtra("index", arrayListTym?.get(position)?.index)
