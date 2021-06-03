@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">CNC Programming Tutorial</string>
+    <string-array name="my_list_item">
+        <item> [1] What is CNC?  </item>
+        <item> [2] How to Make CNC Program?  </item>
+        <item> [3] Make Your First CNC Program  </item>
+        <item> [4] G Code Introduction  </item>
+        <item> [5] Modal G-Code- Learn G Code Programming </item>
+        <item> [6] One Shot G-Codes- Learn G Code Programming  </item>
+        <item> [7] Mill/Lathe G/M-Codes- Learn G Code Programming  </item>
+        <item> [8] Popular CNC G-Code Lists- Learn G Code Programming  </item>
+        <item> [9] Din 66025 Programming- Learn G Code Programming  </item>
+        <item> [10] M Code Introduction </item>
+        <item> [11] CNC Program Block  </item>
+        <item> [12] Why to use Canned Cycles?  </item>
+        <item> [13] Subprograms Basics  </item>
+        <item> [14] CNC Machine Modes  </item>
+        <item> [15] Speed and Feed Override  </item>
+        <item> [16] Block Delete  </item>
+        <item> [17] Dry Run  </item>
+        <item> [18] Reference Point Return  </item>
+        <item> [19] CNC Operating Modes  </item>
+        <item> [20] CNC Reference Point Return  </item>
+        <item> [21] CNC Speed and Feed Override   </item>
+        <item> [22] CNC Optional Block Skip  </item>
+        <item> [23] CNC Dry Run  </item>
+        <item> [24] How to Set Up CNC Milling?  </item>
+        <item> [25] Tool Presetter  </item>
+        <item> [26] Who is CNC Machine Setter?  </item>
+        <item> [27] Tool Selection (CNC Lathe)  </item>
+        <item> [28] Main Parts  </item>
+        <item> [29] Lathe Parts </item>
+        <item> [30] Chuck Jaws  </item>
+        <item> [31] Tool Turret </item>
+    </string-array>
 </resources>
