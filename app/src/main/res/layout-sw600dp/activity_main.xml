@@ -13,18 +13,18 @@
         android:baselineAligned="false">
         <fragment
             android:id="@+id/fragmentA"
-            android:name="com.example.nextsolution_ex1.FragmentA"
+            android:name="com.example.nextsolution_ex1.FragmentListCNC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:layout="@layout/fragment_a"/>
+            tools:layout="@layout/fragment_list_cnc"/>
 
         <fragment
             android:id="@+id/fragmentB"
-            android:name="com.example.nextsolution_ex1.FragmentB"
+            android:name="com.example.nextsolution_ex1.FragmentDetailCNC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            tools:layout="@layout/fragment_b"/>
+            tools:layout="@layout/fragment_detail_cnc"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

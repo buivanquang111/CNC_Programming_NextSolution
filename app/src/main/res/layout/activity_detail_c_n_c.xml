@@ -9,10 +9,10 @@
 
     <fragment
         android:id="@+id/fragmentB"
-        android:name="com.example.nextsolution_ex1.FragmentB"
+        android:name="com.example.nextsolution_ex1.FragmentDetailCNC"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout="@layout/fragment_b"
+        tools:layout="@layout/fragment_detail_cnc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
