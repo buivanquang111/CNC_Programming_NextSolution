@@ -15,7 +15,7 @@
         android:paddingTop="5dp"
         android:paddingBottom="8dp"
         android:text="@string/title_favorite"
-        android:textColor="#F62020"
+        android:textColor="@color/text_title_favorite"
         android:textSize="50sp"
         app:layout_constraintTop_toTopOf="parent" />
 
