@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), MyCommunicator {
     }
 
     override fun onBackPressed() {
-        //super.onBackPressed()
         var alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Exit")
         alertDialogBuilder.setMessage("Are you sure you want to quit application ?")
@@ -42,7 +41,8 @@ class MainActivity : AppCompatActivity(), MyCommunicator {
     override fun displayDetails(index: Int, title: String, url: String, list: ArrayList<CNC>) {
         if (mIsDualPane) {
             //tablet
-            val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
+            val fragmentB =
+                supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
             fragmentB?.displayDetails(index, title, url, list)
         } else {
             //mobile

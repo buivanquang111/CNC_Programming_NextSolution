@@ -27,6 +27,7 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
     private lateinit var mJob: Job
     override val coroutineContext: CoroutineContext
         get() = mJob + Dispatchers.Main
+
     fun displayDetails(index: Int, title: String, url: String, list: ArrayList<CNC>) {
         this.index = index
         this.list = list
@@ -55,7 +56,6 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
                 zoomControls.show()
                 return false
             }
-
         })
         zoomControls.setOnZoomOutClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -70,7 +70,6 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
                     zoomControls.hide()
                 }
             }
-
         })
         zoomControls.setOnZoomInClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -80,26 +79,26 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
                 webView.scaleY = y + 1
                 zoomControls.hide()
             }
-
         })
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //sqlite
         mJob = Job()
         cncDB = context?.let { CNCDataBase.getDatabase(it) }
-
         return inflater.inflate(R.layout.fragment_detail_cnc, container, false)
     }
+
     fun loadWebView(url: String) {
         webView.webViewClient = WebViewClient()
         url?.let { webView.loadUrl(it) }
         var webSettings: WebSettings = webView.settings
         webSettings.javaScriptEnabled = true
     }
+
     override fun onResume() {
         super.onResume()
         imageViewNext.setOnClickListener {
@@ -152,10 +151,10 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
             var urlT = this.url
             launch {
                 cncDB?.cncDao()?.insertCNC(CNCObject(index = indexT, title = titleT, url = urlT))
-                //finish()
             }
         }
     }
+
     override fun onDestroy() {
         mJob.cancel()
         super.onDestroy()

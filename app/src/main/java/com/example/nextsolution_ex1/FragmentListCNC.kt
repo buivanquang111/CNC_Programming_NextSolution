@@ -25,9 +25,7 @@ class FragmentListCNC : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         rootView = inflater.inflate(R.layout.fragment_list_cnc, container, false)
-        //create list title item
         myListItem = resources.getStringArray(R.array.my_list_item)
-        //set list
         setData()
         val adapter: CNCAdapter = CNCAdapter(context, list)
         rootView.recyclerView.layoutManager =
@@ -109,11 +107,12 @@ class FragmentListCNC : Fragment() {
     }
 
     fun setData() {
-        for (i in 0 until myListItem.size){
-            list.add(CNC(i,myListItem[i],getURL(i)))
+        for (i in 0 until myListItem.size) {
+            list.add(CNC(i, myListItem[i], getURL(i)))
         }
     }
-    fun getURL(index: Int): String{
+
+    fun getURL(index: Int): String {
         return "file:///android_asset/$index.html"
     }
 

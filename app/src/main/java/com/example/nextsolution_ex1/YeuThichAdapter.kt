@@ -34,12 +34,14 @@ class YeuThichAdapter internal constructor(context: Context, val cncDB: CNCDataB
         var txt: TextView
         var itemRecyclerView: ConstraintLayout
         var imageViewDelete: ImageView
+
         init {
             imageViewDelete = itemView.findViewById(R.id.imageViewDelete)
             txt = itemView.findViewById(R.id.textViewTitleYeuThich)
             itemRecyclerView = itemView.findViewById(R.id.itemRecyclerViewYeuThich)
             itemRecyclerView.setOnClickListener(this)
         }
+
         override fun onClick(v: View?) {
             val position: Int = layoutPosition
             if (position != RecyclerView.NO_POSITION) {

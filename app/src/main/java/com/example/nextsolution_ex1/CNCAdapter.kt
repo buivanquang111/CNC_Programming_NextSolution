@@ -21,22 +21,25 @@ class CNCAdapter(private val context: Context?, private var list: ArrayList<CNC>
             this.cnc = cnc
             this.pos = position
         }
+
         fun setListeners() {
             itemView.setOnClickListener {
                 val myCommunicator = context as MyCommunicator?
                 myCommunicator?.displayDetails(cnc.index, cnc.title, cnc.url, list)
-                //Toast.makeText(context,"b vua click ${cnc.url}",Toast.LENGTH_SHORT).show()
             }
         }
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview, parent, false)
         return ViewHolder(view)
     }
+
     override fun getItemCount(): Int {
         return list.size
     }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var cnc: CNC = list[position]
         holder.setData(cnc, position)

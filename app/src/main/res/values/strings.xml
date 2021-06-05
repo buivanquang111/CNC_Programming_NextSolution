@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">CNC Programming Tutorial</string>
+    <string name="title_detail">Learn CNC Programming</string>
+    <string name="title_favorite">Favorite List</string>
     <string-array name="my_list_item">
         <item> [1] What is CNC?  </item>
         <item> [2] How to Make CNC Program?  </item>

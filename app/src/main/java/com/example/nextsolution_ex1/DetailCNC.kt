@@ -36,7 +36,8 @@ class DetailCNC : AppCompatActivity() {
         val title = intent.getStringExtra("title")
         val url = intent.getStringExtra("url")
         val list = intent.getParcelableArrayListExtra<CNC>("list")
-        val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
+        val fragmentB =
+            supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
         if (title != null) {
             if (url != null) {
                 if (list != null) {
@@ -45,18 +46,22 @@ class DetailCNC : AppCompatActivity() {
             }
         }
     }
+
     override fun onPause() {
         adView.pause()
         super.onPause()
     }
+
     override fun onResume() {
         adView.resume()
         super.onResume()
     }
+
     override fun onDestroy() {
         adView.destroy()
         super.onDestroy()
     }
+
     override fun onBackPressed() {
         // super.onBackPressed()
         var alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
@@ -72,11 +77,12 @@ class DetailCNC : AppCompatActivity() {
         var alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
+
     fun createInterstitialAd() {
         var adRequest = AdRequest.Builder().build()
         InterstitialAd.load(
             this,
-            "ca-app-pub-3940256099942544/1033173712",
+            configAds.fullDisplay,
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -88,15 +94,17 @@ class DetailCNC : AppCompatActivity() {
 
                             override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
                             }
+
                             override fun onAdShowedFullScreenContent() {
                                 mInterstitialAd = null;
                             }
                         }
-                    }
+                }
+
                 override fun onAdLoaded(interstitialAd: InterstitialAd) {
                     mInterstitialAd = interstitialAd
                 }
             })
-        }
-
     }
+
+}

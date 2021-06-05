@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="#53D1F1"
         android:gravity="center"
-        android:text="Favorite List"
+        android:text="@string/title_favorite"
         android:textColor="#F62020"
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent" />
