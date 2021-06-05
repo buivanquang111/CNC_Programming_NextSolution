@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#53D1F1"
+        android:background="@color/background_header"
         android:gravity="center"
         android:text="@string/title_favorite"
         android:textColor="@color/text_title_favorite"

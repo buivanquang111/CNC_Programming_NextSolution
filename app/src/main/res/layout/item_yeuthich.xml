@@ -9,21 +9,21 @@
         android:id="@+id/textViewTitleYeuThich"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginRight="50dp"
         android:gravity="center_vertical"
         android:text="0.Jquery"
         android:textColor="@color/text_item"
         android:textSize="18dp"
-        android:layout_marginRight="50dp"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageViewDelete"
-        android:src="@drawable/ic_delete"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

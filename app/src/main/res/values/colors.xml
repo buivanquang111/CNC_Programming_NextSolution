@@ -12,4 +12,5 @@
     <color name="text_item">#272727</color>
     <color name="background_onboarding">#3CE8D4</color>
     <color name="text_title_favorite">#F62020</color>
+    <color name="background_header">#53D1F1</color>
 </resources>

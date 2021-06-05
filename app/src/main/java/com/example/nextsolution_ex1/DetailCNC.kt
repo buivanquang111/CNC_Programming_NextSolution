@@ -9,7 +9,6 @@ import com.google.android.gms.ads.initialization.InitializationStatus
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-
 import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
 
 class DetailCNC : AppCompatActivity() {
