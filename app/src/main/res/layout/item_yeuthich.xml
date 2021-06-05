@@ -14,7 +14,7 @@
         android:layout_marginTop="5dp"
         android:gravity="center_vertical"
         android:text="0.Jquery"
-        android:textColor="#272727"
+        android:textColor="@color/text_item"
         android:textSize="18dp"
         android:layout_marginRight="50dp"
         app:layout_constraintTop_toTopOf="parent" />

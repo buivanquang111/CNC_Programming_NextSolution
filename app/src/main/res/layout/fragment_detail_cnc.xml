@@ -12,7 +12,7 @@
         android:paddingTop="5dp"
         android:paddingBottom="8dp"
         android:text="@string/title_detail"
-        android:textColor="#F62020"
+        android:textColor="@color/text_title_detail"
         android:textSize="25dp"
         app:layout_constraintTop_toTopOf="parent" />
 
