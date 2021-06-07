@@ -20,19 +20,17 @@ import kotlin.coroutines.CoroutineContext
 
 class FragmentDetailCNC : Fragment(), CoroutineScope {
     private var cncDB: CNCDataBase? = null
+    lateinit var myListItem: Array<String>
     var index: Int = 0
-    lateinit var list: ArrayList<CNC>
-    lateinit var title: String
+    var list: ArrayList<CNC> = arrayListOf()
     lateinit var url: String
     private lateinit var mJob: Job
     override val coroutineContext: CoroutineContext
         get() = mJob + Dispatchers.Main
 
-    fun displayDetails(index: Int, title: String, url: String, list: ArrayList<CNC>) {
+    fun displayDetails(index: Int) {
         this.index = index
-        this.list = list
-        this.title = title
-        this.url = url
+        url = getURL(index)
         imageViewTymDo.visibility = View.GONE
         imageViewTymTrang.visibility = View.VISIBLE
         launch {
@@ -46,10 +44,6 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
         }
         loadWebView(url)
         textViewIndexDetail.text = "${index + 1}/${list.size}"
-        var mHandler: Handler = Handler()
-        var hideZoom = Runnable {
-            zoomControls.hide()
-        }
         zoomControls.hide()
         webView.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
@@ -89,6 +83,10 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
     ): View? {
         mJob = Job()
         cncDB = context?.let { CNCDataBase.getDatabase(it) }
+        myListItem = resources.getStringArray(R.array.my_list_item)
+        for (i in myListItem.indices) {
+            list.add(CNC(i, myListItem[i], getURL(i)))
+        }
         return inflater.inflate(R.layout.fragment_detail_cnc, container, false)
     }
 
@@ -158,5 +156,8 @@ class FragmentDetailCNC : Fragment(), CoroutineScope {
     override fun onDestroy() {
         mJob.cancel()
         super.onDestroy()
+    }
+    fun getURL(index: Int): String {
+        return "file:///android_asset/$index.html"
     }
 }

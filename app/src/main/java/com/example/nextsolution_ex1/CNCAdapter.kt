@@ -25,7 +25,7 @@ class CNCAdapter(private val context: Context?, private var list: ArrayList<CNC>
         fun setListeners() {
             itemView.setOnClickListener {
                 val myCommunicator = context as MyCommunicator?
-                myCommunicator?.displayDetails(cnc.index, cnc.title, cnc.url, list)
+                myCommunicator?.displayDetails(cnc.index)
             }
         }
     }

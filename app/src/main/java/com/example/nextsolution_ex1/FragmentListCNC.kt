@@ -15,6 +15,7 @@ import com.example.nextsolution_ex1.R.string
 import kotlinx.android.synthetic.main.fragment_list_cnc.view.*
 
 class FragmentListCNC : Fragment() {
+    private val titleShare: String = "Share with"
     lateinit var rootView: View
     private var listSearch: ArrayList<CNC> = arrayListOf()
     private var list: ArrayList<CNC> = arrayListOf()
@@ -92,15 +93,14 @@ class FragmentListCNC : Fragment() {
         rootView.imageViewShare.setOnClickListener {
             var intentShare: Intent = Intent(Intent.ACTION_SEND)
             intentShare.type = "text/plain"
-            intentShare.putExtra(Intent.EXTRA_SUBJECT, "My app")
+            intentShare.putExtra(Intent.EXTRA_SUBJECT, "")
             var url: String =
                 "https://play.google.com/store/apps/details?id=" + getString(string.idShare)
             intentShare.putExtra(Intent.EXTRA_TEXT, url)
-            startActivity(Intent.createChooser(intentShare, "Share with"))
+            startActivity(Intent.createChooser(intentShare, titleShare))
         }
         rootView.imageViewListTym.setOnClickListener {
             var intent: Intent = Intent(context, YeuThichAcivity::class.java)
-            intent.putParcelableArrayListExtra("listGoTym", list)
             startActivity(intent)
         }
         return rootView

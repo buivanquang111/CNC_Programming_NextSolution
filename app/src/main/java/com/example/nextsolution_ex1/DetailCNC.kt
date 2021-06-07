@@ -13,11 +13,11 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
 
 class DetailCNC : AppCompatActivity() {
+    private var sIndex: String = "index"
     private var mInterstitialAd: InterstitialAd? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_c_n_c)
-        //quang cao
         MobileAds.initialize(this) {}
         MobileAds.setRequestConfiguration(
             RequestConfiguration.Builder()
@@ -31,19 +31,11 @@ class DetailCNC : AppCompatActivity() {
                 createInterstitialAd()
             }
         })
-        val index = intent.getIntExtra("index", 0)
-        val title = intent.getStringExtra("title")
-        val url = intent.getStringExtra("url")
-        val list = intent.getParcelableArrayListExtra<CNC>("list")
+        val index = intent.getIntExtra(sIndex, 0)
+
         val fragmentB =
             supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
-        if (title != null) {
-            if (url != null) {
-                if (list != null) {
-                    fragmentB?.displayDetails(index, title, url, list)
-                }
-            }
-        }
+        fragmentB?.displayDetails(index)
     }
 
     override fun onPause() {
@@ -66,7 +58,7 @@ class DetailCNC : AppCompatActivity() {
         alertDialogBuilder.setTitle("Advertisement")
         alertDialogBuilder.setMessage("Please watch the ad to continue!!")
         alertDialogBuilder.setPositiveButton(
-            "YES",
+            "Yes",
             DialogInterface.OnClickListener { dialog, which ->
                 mInterstitialAd?.show(this)
                 super.onBackPressed()

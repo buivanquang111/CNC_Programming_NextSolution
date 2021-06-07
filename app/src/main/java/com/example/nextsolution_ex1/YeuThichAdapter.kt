@@ -17,7 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class YeuThichAdapter internal constructor(context: Context, val cncDB: CNCDataBase) :
+class YeuThichAdapter internal constructor(context: Context, private val cncDB: CNCDataBase) :
     RecyclerView.Adapter<YeuThichAdapter.ViewHolder>() {
     private var list = emptyList<CNCObject>()
     private lateinit var listener: OnItemClickLister
@@ -70,6 +70,7 @@ class YeuThichAdapter internal constructor(context: Context, val cncDB: CNCDataB
                 notifyDataSetChanged()
             }
         }
+
     }
 
     interface OnItemClickLister {

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), MyCommunicator {
+    private val sIndex: String = "index"
     private var mIsDualPane = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,37 +21,33 @@ class MainActivity : AppCompatActivity(), MyCommunicator {
     override fun onBackPressed() {
         var alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Exit")
-        alertDialogBuilder.setMessage("Are you sure you want to quit application ?")
+        alertDialogBuilder.setMessage("Are you sure you want to quit application?")
         alertDialogBuilder.setPositiveButton(
-            "YES",
+            "Yes",
             DialogInterface.OnClickListener { dialog, which ->
                 moveTaskToBack(true)
                 System.exit(0)
 
             })
         alertDialogBuilder.setNegativeButton(
-            "NO",
+            "No",
             DialogInterface.OnClickListener { dialog, which ->
                 dialog.cancel()
-
             })
         var alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
 
-    override fun displayDetails(index: Int, title: String, url: String, list: ArrayList<CNC>) {
+    override fun displayDetails(index: Int) {
         if (mIsDualPane) {
             //tablet
             val fragmentB =
                 supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetailCNC?
-            fragmentB?.displayDetails(index, title, url, list)
+            fragmentB?.displayDetails(index)
         } else {
             //mobile
             val intent: Intent = Intent(this, DetailCNC::class.java)
-            intent.putExtra("index", index)
-            intent.putExtra("title", title)
-            intent.putExtra("url", url)
-            intent.putParcelableArrayListExtra("list", list)
+            intent.putExtra(sIndex, index)
             startActivity(intent)
         }
     }
