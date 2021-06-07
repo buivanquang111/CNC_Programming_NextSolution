@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".DetailCNC">
+    tools:context="com.global.tutorial.DetailCNC">
 
     <fragment
         android:id="@+id/fragmentB"
-        android:name="com.example.nextsolution_ex1.FragmentDetailCNC"
+        android:name="com.global.tutorial.FragmentDetailCNC"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/adView"

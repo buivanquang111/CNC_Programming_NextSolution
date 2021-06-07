@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.global.tutorial.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
 
         <fragment
             android:id="@+id/fragmentA"
-            android:name="com.example.nextsolution_ex1.FragmentListCNC"
+            android:name="com.global.tutorial.FragmentListCNC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -22,7 +22,7 @@
 
         <fragment
             android:id="@+id/fragmentB"
-            android:name="com.example.nextsolution_ex1.FragmentDetailCNC"
+            android:name="com.global.tutorial.FragmentDetailCNC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
