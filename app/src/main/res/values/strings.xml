@@ -3,6 +3,8 @@
     <string name="title_detail">Learn CNC Programming</string>
     <string name="title_favorite">Favorite List</string>
     <string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="idShare">com.devtd.Learn_CNC_Programming</string>
+    <string name="fullDisplay">ca-app-pub-3940256099942544/1033173712</string>
     <string-array name="my_list_item">
         <item> [1] What is CNC?  </item>
         <item> [2] How to Make CNC Program?  </item>

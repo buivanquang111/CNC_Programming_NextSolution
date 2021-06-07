@@ -11,10 +11,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nextsolution_ex1.R.string
 import kotlinx.android.synthetic.main.fragment_list_cnc.view.*
 
 class FragmentListCNC : Fragment() {
-    private val configAds: ConfigAds = ConfigAds()
     lateinit var rootView: View
     private var listSearch: ArrayList<CNC> = arrayListOf()
     private var list: ArrayList<CNC> = arrayListOf()
@@ -94,7 +94,7 @@ class FragmentListCNC : Fragment() {
             intentShare.type = "text/plain"
             intentShare.putExtra(Intent.EXTRA_SUBJECT, "My app")
             var url: String =
-                "https://play.google.com/store/apps/details?id=" + configAds.idShare
+                "https://play.google.com/store/apps/details?id=" + getString(string.idShare)
             intentShare.putExtra(Intent.EXTRA_TEXT, url)
             startActivity(Intent.createChooser(intentShare, "Share with"))
         }

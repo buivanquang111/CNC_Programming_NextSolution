@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.example.nextsolution_ex1.R.string
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.initialization.InitializationStatus
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener
@@ -12,7 +13,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_detail_c_n_c.*
 
 class DetailCNC : AppCompatActivity() {
-    private val configAds: ConfigAds = ConfigAds()
     private var mInterstitialAd: InterstitialAd? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +62,6 @@ class DetailCNC : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        // super.onBackPressed()
         var alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Advertisement")
         alertDialogBuilder.setMessage("Please watch the ad to continue!!")
@@ -72,7 +71,6 @@ class DetailCNC : AppCompatActivity() {
                 mInterstitialAd?.show(this)
                 super.onBackPressed()
             })
-
         var alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
@@ -81,7 +79,7 @@ class DetailCNC : AppCompatActivity() {
         var adRequest = AdRequest.Builder().build()
         InterstitialAd.load(
             this,
-            configAds.fullDisplay,
+            getString(string.fullDisplay),
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
